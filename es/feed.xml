@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Play by Data</title>
+        <description></description>
+        <link>/</link>
+        <atom:link href="/es/feed.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Tue, 26 Nov 2024 21:18:17 +0000</pubDate>
+        <lastBuildDate>Tue, 26 Nov 2024 21:18:17 +0000</lastBuildDate>
+        <generator>Jekyll v4.3.4</generator>
+        
+            <item>
+                <title>Buscando NFL Winners: &quot;El Comienzo&quot;</title>
+                <description>
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot; id=&quot;cell-id=a44d97428a9b2ecd&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;h2 id=&quot;What%E2%80%99s-This-About&quot;&gt;&lt;a class=&quot;anchor-link&quot; href=&quot;#What%E2%80%99s-This-About&quot;&gt;What’s This About&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Welcome to &lt;em&gt;Finding NFL Winners&lt;/em&gt;, a series where we dive into what it takes to predict &lt;strong&gt;NFL game outcomes&lt;/strong&gt;. In this first part, &lt;em&gt;The Start&lt;/em&gt;, we’ll explore the data to uncover which stats truly matter. Are turnovers, yards, or something else the key to victory?&lt;/p&gt;
+&lt;p&gt;As the series unfolds, we’ll build tools and eventually create a predictive model to tackle the ultimate question: &lt;em&gt;Who’s going to win?&lt;/em&gt; Let’s get started!&lt;/p&gt;
+&lt;h3 id=&quot;Disclaimers&quot;&gt;&lt;a class=&quot;anchor-link&quot; href=&quot;#Disclaimers&quot;&gt;Disclaimers&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;First, I’m relatively new to American football, with just three years of watching under my belt. While I still have plenty to learn, this fresh perspective allows me to focus solely on the numbers, free from bias.&lt;/p&gt;
+&lt;p&gt;Second, although I’ll reference Vegas odds in my analysis, I strongly discourage gambling. It’s addictive and harmful. This series is about understanding and predicting the game—not betting on it.&lt;/p&gt;
+&lt;h3 id=&quot;Tools-and-Shutouts&quot;&gt;&lt;a class=&quot;anchor-link&quot; href=&quot;#Tools-and-Shutouts&quot;&gt;Tools and Shutouts&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Assistants: Since content, images,&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+                <pubDate>Sun, 21 Apr 2024 12:01:35 +0000</pubDate>
+                <link>/articles/findingnflwinners</link>
+                <guid isPermaLink="true">/articles/findingnflwinners</guid>
+                
+                <category>NFL</category>
+                
+                <category>Coding</category>
+                
+                
+            </item>
+        
+    </channel>
+</rss>
