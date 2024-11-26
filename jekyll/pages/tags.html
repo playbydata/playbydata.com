@@ -1,0 +1,49 @@
+---
+layout: default
+title: Tags
+permalink: /tags/
+---
+<!-- begin tag page -->
+<section class="tag-page">
+  {% for tag in site.tags %}
+  <div class="tags id="{{ tag[0] | downcase | url_encode }}">
+    <div class="container">
+      <div class="row">
+        <div class="col col-12">
+          <div class="tag-page__head">
+            <h1 class="tag-page__title">{{ tag[0] }}</h1>
+            <em class="tag-page__counter">
+              {{ tag[1].size }}
+              {% if tag[1].size < 2 %}
+                {{ site.data.localizations.articles.title_singular[site.active_lang] | default: "article" }}
+              {% else %}
+                {{ site.data.localizations.articles.title[site.active_lang] | default: "articles" }}
+              {% endif %}
+            </em>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        {% for post in tag[1] %}
+          {% if post.title != null %}
+            {% include article.html %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+<!-- end tag page -->
+
+<script>
+  var tag_name = decodeURIComponent(window.location.search.split('=')[1]);
+  if (tag_name) {
+    var el = document.getElementById(tag_name);
+    if (el) {
+      el.classList.remove("is-hidden");
+    }
+  }
+</script>

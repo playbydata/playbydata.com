@@ -1,0 +1,42 @@
+name: Deploy Jekyll Site
+
+on:
+  push:
+    branches:
+      - main  # Replace with your default branch
+  workflow_dispatch:
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the repository
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    # Set up Ruby and install Jekyll dependencies
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.1 # Match your Ruby version
+        bundler-cache: true
+
+    - name: Install Dependencies
+      run: |
+        cd jekyll
+        bundle install
+
+    # Build the Jekyll site
+    - name: Build Jekyll Site
+      run: |
+        cd jekyll
+        bundle exec jekyll build --destination ../playbydata_site
+
+    # Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./playbydata_site
+        publish_branch: gh-pages

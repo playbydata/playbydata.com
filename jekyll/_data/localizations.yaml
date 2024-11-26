@@ -1,0 +1,35 @@
+home:
+  title: Play by Data
+  description:
+    en: Welcome to Play by Data – the spot where real fans geek out on stats and strategy. We break down the numbers, dive deep into the games, and give you the edge for fantasy, bets, or just talking trash. From NFL to EPL, we’ve got the research to back it up. Let’s play smarter!
+    es: Bienvenido a Play by Data. Donde los quemadores se vuelven locos con las estadísticas y la estrategia. Desmenuzamos los números, analizamos los juegos y te damos la ventaja pa’ que arrases en el fantasy, las apuestas o simplemente pa’ dar muela con los socios. Desde NFL hasta la Premier, tenemos la investigación que respalda todo.
+sidebar:
+  title: Play by Data
+  description:
+    en: Welcome to Play by Data – the spot where real fans geek out on stats and strategy. We break down the numbers, dive deep into the games, and give you the edge for fantasy, bets, or just talking trash. From NFL to EPL, we’ve got the research to back it up. Let’s play smarter!
+    es: Bienvenido a Play by Data. Donde los quemadores se vuelven locos con las estadísticas y la estrategia. Desmenuzamos los números, analizamos los juegos y te damos la ventaja pa’ que arrases en el fantasy, las apuestas o simplemente pa’ dar muela con los socios. Desde NFL hasta la Premier, tenemos la investigación que respalda todo.
+articles:
+  title:
+    en: Articles
+    es: Artículos
+  title_singular:
+    en: Article
+    es: Artículo
+  title_show:
+    en: Articles <em>Showcase</em>
+    es: Artículos <em>Mostrar</em>
+  description:
+  all:
+    en: All Articles
+    es: Todos los Artículos
+  recent:
+    en: Recent <em>Articles</em>
+    es: Artículos Recientes
+  related:
+    en: Related <em>Articles</em>
+    es: Artículos Relacionados
+projects:
+  title:
+    en: Projects <em>Showcase</em>
+    es: Proyectos <em>Mostrar</em>
+  description:

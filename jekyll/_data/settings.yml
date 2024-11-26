@@ -1,0 +1,111 @@
+#-------------------------------
+# Site Settings
+logo: /assets/site/logo_light.png
+logo_dark: /assets/site/logo_dark.png
+color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
+
+#-------------------------------
+# Navigation Settings
+menu_settings:
+  menu_items:
+    - title:
+        en: Home
+        es: Home
+      url: '/'
+    - title:
+        en: Articles
+        es: Artículos
+      url: '/articles/'
+#    - title:
+#        en: Tags
+#        es: Tags
+#      url: '/tags/'
+
+# Call to action button
+cta_button:
+  enable: false
+  cta_button_link: "/contact/"
+  cta_button_text: Say Hello!
+
+# Social Links
+social:
+- {icon: "fa-brands fa-x-twitter", name: "Twitter", link: "https://twitter.com"}
+#- {icon: "fa-brands fa-facebook", name: "Facebook", link: "https://facebook.com"}
+- {icon: "fa-brands fa-github", name: "Github", link: "https://github.com/playbydata"}
+#- {icon: "fa-brands fa-mastodon", name: "Mastodon", link: "https://mastodon.social"}
+#- {icon: "fa-brands fa-instagram", name: "Instagram", link: "https://instagram.com"}
+#- {icon: "fa-brands fa-spotify", name: "Spotify", link: "https://spotify.com"}
+- {icon: "fa-brands fa-youtube", name: "Spotify", link: "https://youtube.com"}
+#- {icon: "fa-brands fa-vimeo-v", name: "Vimeo", link: "https://vimeo.com"}
+
+# Example of adding a new link to the footer - {icon: "fa-brands fa-pinterest", name: "Pinterest", link: "https://pinterest.com"}
+# Other icons can be found at https://fontawesome.com/icons
+
+#-------------------------------
+# Blog Section Settings
+blog:
+  enable: true
+
+#-------------------------------
+# Projects Settings
+projects:
+  enable: false
+
+#-------------------------------
+# Testimonials Settings
+testimonials:
+  enable: false
+  testimonials_title: Trusted by <em>Professionals</em> # You can add an 'em' element to highlight text.
+  testimonials_description: Join our community of creative professionals where you can develop your talents and reach new heights in design.
+
+testimonial-items:
+  - name: Amelia Jones
+    image:
+    designation : Network Engineer
+    content : This product designer is an expert in his field. His ability to understand the needs of clients and create designs that satisfy them is astounding.
+#-------------------------------
+# Faq (Frequently asked questions) Settings
+faq:
+  enable: false
+  faq_title: Questions? <em>Answers</em>. # You can add an 'em' element to highlight text.
+  faq_description: Find solutions to common queries here.
+
+faq_items:
+  - title: What are your main areas of expertise in product design?
+    description: My specialization includes user interface (UI) and user experience (UX) design, prototyping, as well as researching and testing user needs.
+#-------------------------------
+# Gallery Settings
+gallery:
+  enable: false
+  gallery_title: A Visual Journey Through <em>My World</em> # You can add an 'em' element to highlight text.
+  gallery_description: Step into my visual world where each image tells a story. From the bustling streets of urban landscapes to the serene beauty of nature, explore the moments that inspire and define my journey.
+  gallery_caption:
+gallery_images:
+  - alt: 'Together'
+    url: '/assets/site/logo_light.jpg'
+#-------------------------------
+# Newsletter Settings
+mailchimp:
+  enable: false
+  mailchimp_title: Subscribe to Our <em>Newsletter</em> # You can add an 'em' element to highlight text.
+  mailchimp_description: Join now and never miss out on our stuff again. Because you are worth it!
+  mailchimp_identifier: # Add your MailChimp form identifier. For example - gmail.us21.list-manage.com/subscribe/post?u=8aeb9c31a5c97a3a5f9ff2740&amp;id=0e31fd7793&amp
+  mailchimp_input_text: Your email address
+  mailchimp_button_text: Subscribe
+
+
+#-------------------------------
+# Contact Settings
+contact:
+  email: # Add your form_id
+  description:
+
+
+#-------------------------------
+# Comment Section (Disqus)
+disqus-identifier: # Add your shortname for Disqus Comment.
+
+
+#-------------------------------
+# Google Analytics
+google-analytics: # Add your GA Tracking Id

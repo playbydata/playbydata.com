@@ -1,0 +1,104 @@
+---
+layout: default
+title: Articles
+description:
+image: '/assets/site/100.jpg'
+permalink: /articles/
+---
+
+<!-- Page Header -->
+<div class="container">
+  <div class="page-section-head">
+    {% if site.data.localizations.articles.title %}
+      <h1 class="page-section-title">{{ site.data.localizations.articles.title[site.active_lang] }}</h1>
+    {% endif %}
+    {% if site.data.localizations.articles.description[site.active_lang] %}
+      <p class="page-section-description">{{ site.data.localizations.articles.description[site.active_lang] }}</p>
+    {% endif %}
+  </div>
+
+<!--  &lt;!&ndash; Filters and Search &ndash;&gt;-->
+<!--  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 20px;">-->
+<!--    &lt;!&ndash; Tags as Buttons &ndash;&gt;-->
+<!--    <div id="tag-buttons" style="flex-grow: 1; display: flex; flex-wrap: wrap; gap: 10px;">-->
+<!--      <button-->
+<!--        class="tag-button"-->
+<!--        data-tag="all"-->
+<!--        style="padding: 5px 10px; border: none; background-color: #007bff; color: white; border-radius: 4px; cursor: pointer;">-->
+<!--        All-->
+<!--      </button>-->
+<!--      {% assign tags = site.tags | sort %}-->
+<!--      {% for tag in tags %}-->
+<!--        <button-->
+<!--          class="tag-button"-->
+<!--          data-tag="{{ tag[0] | downcase }}"-->
+<!--          style="padding: 5px 10px; border: none; background-color: #007bff; color: white; border-radius: 4px; cursor: pointer;">-->
+<!--          {{ tag[0] }}-->
+<!--        </button>-->
+<!--      {% endfor %}-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Search Bar &ndash;&gt;-->
+<!--    <div>-->
+<!--      <input-->
+<!--        type="text"-->
+<!--        id="search-box"-->
+<!--        placeholder="Search articles..."-->
+<!--        style="padding: 5px 10px; border: 1px solid #ccc; border-radius: 4px; width: 200px;"-->
+<!--      >-->
+<!--    </div>-->
+<!--  </div>-->
+</div>
+
+<!-- Articles Section -->
+<div class="blog-page container" style="margin-top: 20px;">
+  <div class="row grid">
+    {% if paginator.posts %}
+      {% for post in paginator.posts %}
+        {% include article.html post=post data-tags=post.tags %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+{% include pagination.html %}
+
+<!-- JavaScript -->
+<script>
+  // Handle tag filtering
+  document.querySelectorAll('.tag-button').forEach(button => {
+    button.addEventListener('click', function () {
+      const selectedTag = this.dataset.tag.toLowerCase();
+      const articles = document.querySelectorAll('[data-tags]');
+
+      // Reset button styles
+      document.querySelectorAll('.tag-button').forEach(btn => btn.style.backgroundColor = '#007bff');
+      this.style.backgroundColor = '#0056b3';
+
+      // Filter articles by tag
+      articles.forEach(article => {
+        const tags = article.dataset.tags.split(',');
+        if (selectedTag === 'all' || tags.includes(selectedTag)) {
+          article.style.display = '';
+        } else {
+          article.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Handle search functionality
+  document.getElementById('search-box').addEventListener('input', function () {
+    const query = this.value.toLowerCase();
+    const articles = document.querySelectorAll('[data-tags]');
+
+    articles.forEach(article => {
+      const textContent = article.textContent.toLowerCase();
+      if (textContent.includes(query)) {
+        article.style.display = '';
+      } else {
+        article.style.display = 'none';
+      }
+    });
+  });
+</script>

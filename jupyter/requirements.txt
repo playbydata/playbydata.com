@@ -1,0 +1,14 @@
+# Jupyter
+matplot
+numpy
+pandas
+bokeh
+plotly
+qgridnext
+lux-api
+itables
+# ML
+scikit-learn
+
+# NFL
+nfl_data_py

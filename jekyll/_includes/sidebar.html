@@ -1,0 +1,39 @@
+<!-- begin sidebar -->
+<section class="sidebar">
+  <div class="sidebar__inner" >
+
+    <div class="sidebar__meta" style="display: flex; justify-content: center;">
+      <div class="sidebar__avatar" >
+        <img class="logo__image" src="{{ site.data.settings.logo | relative_url }}" alt="{{ site.data.localizations.home.title }}">
+        <img class="logo__image__dark" src="{{ site.data.settings.logo_dark | relative_url }}" alt="{{ site.data.localizations.home.title }}">
+      </div>
+    </div>
+
+    <div class="sidebar__content">
+      {% if site.data.localizations.sidebar.title %}
+        <h1 class="sidebar__title" style="display: flex; justify-content: center;">{{ site.data.localizations.sidebar.title }}</h1>
+      {% endif %}
+      {% if site.data.localizations.sidebar.description[site.active_lang] %}
+        <p class="sidebar__description">{{ site.data.localizations.sidebar.description[site.active_lang] }}</p>
+      {% endif %}
+    </div>
+
+    <div class="sidebar__social" style="display: flex; justify-content: center;">
+      {% if site.data.settings.social %}
+      <ul class="sidebar__social__list list-reset">
+        {% for social in site.data.settings.social %}
+        <li class="sidebar__social__item">
+          <a class="sidebar__social__link" href="{{ social.link }}" target="_blank" rel="noopener"
+            aria-label="{{ social.icon }} link"><i class="{{ social.icon }}"></i></a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+
+    <div class="sidebar__copyright">{{site.time | date: '%Y'}} &copy; <a href="/">{{site.data.localizations.home.title}}</a>.
+    </div>
+
+  </div>
+</section>
+<!-- end sidebar -->
