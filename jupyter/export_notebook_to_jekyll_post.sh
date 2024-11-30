@@ -63,5 +63,8 @@ sed -i '' '/{% raw %}/,/{% endraw %}/{
 # Insert the generated HTML file contents after {% raw %}
 sed -i '' "/{% raw %}/r $GENERATED_HTML" "$HTML_OUTPUT_PATH"
 
+# Remove Temporal
+rm -rf $GENERATED_HTML
+
 # Notify the user
 echo "Conversion, cleanup, and insertion completed for notebook: $NOTEBOOK_NAME"

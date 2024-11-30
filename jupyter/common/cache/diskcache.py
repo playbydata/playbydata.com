@@ -18,7 +18,7 @@ class Cache(DiskCache):
                 elif name:
                     key = str(name)
                 else:
-                    key = f"{full_name(func)}.{'.'.join(map(str, args))}.{kwargs}"
+                    key = f"{full_name(func)}.{".".join(map(str, args))}.{kwargs}"
 
                 result = self.get(key, default=ENOVAL, retry=True)
 
@@ -32,4 +32,4 @@ class Cache(DiskCache):
         return decorator
 
 
-disk_cache = Cache(directory=settings.TMP_DIRECTORY)
+disk_cache = Cache(directory=settings.LOCAL_STORAGE_PATH, size_limit=10 * 1024 * 1024 * 1024)

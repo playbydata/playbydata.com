@@ -1,12 +1,10 @@
 import numpy as np
-import plotly.graph_objects as go
-import plotly.io as pio
-pio.renderers.default = 'notebook_connected'
+from .plotly import *
 
 from scipy.stats import gaussian_kde
 
 
-def plot_overlap_histogram(data, figure, name, bins=25, color='blue', row=None, col=None):
+def plot_overlap_histogram(data, figure, name, bins=25, color="blue", row=None, col=None, ay=-140, max_row=None):
     # X Axis
     x = np.linspace(data.min(), data.max())
     # Histogram
@@ -29,10 +27,10 @@ def plot_overlap_histogram(data, figure, name, bins=25, color='blue', row=None, 
         go.Scatter(
             x=x,
             y=y / max(y) * max_hist_values,  # Use scaled KDE values
-            mode='lines',
-            name=f'{name} Trend',
+            mode="lines",
+            name=f"{name} Trend",
             showlegend=False,
-            line=dict(color=color, dash='dash')  # Increased width
+            line=dict(color=color, dash="dash")  # Increased width
         ),
         **(dict(row=row, col=col) if row and col else {})
     )
@@ -44,23 +42,27 @@ def plot_overlap_histogram(data, figure, name, bins=25, color='blue', row=None, 
         go.Scatter(
             x=[mean, mean],
             y=[0, max_hist_values],  # Match histogram height
-            mode='lines',
-            name=f'{name} Mean',
+            mode="lines",
+            name=f"{name} Mean",
             showlegend=False,
             line=dict(color=color)  # Increased width
         ),
         **(dict(row=row, col=col) if row and col else {})
     )
     # Add annotation for the mean
+    ann_pos = None
+    if col and row and max_row:
+        ann_pos = col+(row-1)*max_row
     figure.add_annotation(
         x=mean,  # Position at the mean
         y=max_hist_values,  # Position at the top of the vertical line
-        text=f'N={count}<br>μ={mean:.2f}<br>cv={int(std*100/mean)}%',  # Display mean and std
+        text=f"<br>μ={mean:.2f}<br>cv={int(std*100/mean)}%",  # Display mean and std
         showarrow=True,
         arrowhead=2,
-        ax=0,  # Horizontal offset for the arrow's tail
-        ay=-100,  # Vertical offset for the arrow's tail
+        ax=0,  # Horizontal offset for the arrow"s tail
+        ay=ay,  # Vertical offset for the arrow"s tail
         font=dict(color=color, size=12),
-        align='left'  # Align text to the left for better readability
+        align="left",  # Align text to the left for better readability,
+        **(dict(xref=f"x{ann_pos}", yref=f"y{ann_pos}") if col and row and max_row else {})
     )
     return figure

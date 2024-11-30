@@ -1,5 +1,5 @@
 
-__all__ = ('BaseDataSourceClient',)
+__all__ = ("BaseDataSourceClient",)
 
 
 class BaseDataSourceClient(object):

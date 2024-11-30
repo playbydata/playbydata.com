@@ -4,11 +4,14 @@ numpy
 pandas
 bokeh
 plotly
-qgridnext
-lux-api
 itables
+
 # ML
 scikit-learn
+
+# Others
+python-dotenv
+diskcache
 
 # NFL
 nfl_data_py

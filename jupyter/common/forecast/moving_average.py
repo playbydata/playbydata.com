@@ -26,10 +26,10 @@ class MovingAverageForecast(BaseForecat):
         """
         Run Forecast through the interval_range and minimize the `mse`
         """
-        mse_df = pd.DataFrame({'interval': interval_range, 'mse': [None for i in interval_range]})
+        mse_df = pd.DataFrame({"interval": interval_range, "mse": [None for i in interval_range]})
         for i in range(len(mse_df)):
-            ar_forecaster = MovingAverageForecast(train_data=self.train_data, interval=mse_df.loc[i, 'interval'])
+            ar_forecaster = MovingAverageForecast(train_data=self.train_data, interval=mse_df.loc[i, "interval"])
             forecast_data = ar_forecaster.forecast_series(test_data)
             mse = mean_squared_error(test_data, forecast_data)
-            mse_df.loc[i, 'mse'] = mse
-        return mse_df[mse_df['mse'] == mse_df['mse'].min()].iloc[0]['interval']
+            mse_df.loc[i, "mse"] = mse
+        return mse_df[mse_df["mse"] == mse_df["mse"].min()].iloc[0]["interval"]

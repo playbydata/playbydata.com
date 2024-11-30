@@ -16,8 +16,8 @@ articles:
     en: Article
     es: Artículo
   title_show:
-    en: Articles <em>Showcase</em>
-    es: Artículos <em>Mostrar</em>
+    en: Articles
+    es: Artículos
   description:
   all:
     en: All Articles
@@ -30,6 +30,6 @@ articles:
     es: Artículos Relacionados
 projects:
   title:
-    en: Projects <em>Showcase</em>
-    es: Proyectos <em>Mostrar</em>
+    en: Projects
+    es: Proyectos
   description:
