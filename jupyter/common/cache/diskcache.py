@@ -22,7 +22,7 @@ class Cache(DiskCache):
 
                 result = self.get(key, default=ENOVAL, retry=True)
 
-                if result is ENOVAL:
+                if result is ENOVAL or settings.RESET_CACHE:
                     result = func(*args, **kwargs)
                     if expire is None or expire > 0:
                         self.set(key, result, expire, tag=tag, retry=True)

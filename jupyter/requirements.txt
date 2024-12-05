@@ -8,6 +8,7 @@ itables
 
 # ML
 scikit-learn
+graphviz
 
 # Others
 python-dotenv
