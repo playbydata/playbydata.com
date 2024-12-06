@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Finding NFL Winners: "The Record"'
+title: 'Predicciones de NFL: "Ganador por Record"'
 date: 2024-12-01 00:00:00 -0400
 image: '/assets/posts/2024-12-05-nflpredictions-scores/michael_lehan.jpg'
 image_credit: 'Michael Lehan (Getty Images)'
@@ -13,10 +13,10 @@ lang: es
 {% raw %}
 <div class="cell border-box-sizing text_cell rendered" id="cell-id=4447d55cd1ae879d"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="%C2%BFDe-Qu%C3%A9-Va-Esto?-%F0%9F%A4%94"><a class="anchor-link" href="#%C2%BFDe-Qu%C3%A9-Va-Esto?-%F0%9F%A4%94">¿De Qué Va Esto? 🤔</a></h2><p>¡Bienvenidos a <em>Finding NFL Winners</em>, una serie donde exploramos lo necesario para predecir <strong>los resultados de los juegos de la NFL</strong>. En esta primera parte, <em>El Récord</em>, vamos a analizar cómo el récord de temporada de un equipo afecta las probabilidades de ganar.</p>
-<p>A medida que avancemos en la serie, desarrollaremos herramientas y eventualmente construiremos un modelo predictivo para responder la gran pregunta: <em>¿Quién va a ganar?</em> ¡Vamos allá!</p>
-<h3 id="Descargos-de-Responsabilidad"><a class="anchor-link" href="#Descargos-de-Responsabilidad">Descargos de Responsabilidad</a></h3><p>Primero, soy relativamente nuevo en el fútbol americano, con solo tres años de experiencia viendo partidos. Aunque todavía tengo mucho por aprender, esta perspectiva fresca me permite enfocarme únicamente en los números, sin prejuicios.</p>
-<p>Segundo, aunque haré referencia a las probabilidades de Las Vegas en mi análisis, desaconsejo completamente las apuestas. Son adictivas y dañinas. Esta serie trata sobre entender y predecir el juego, no sobre apostar en él.</p>
+<h2 id="%C2%BFDe-Qu%C3%A9-Se-Trata?-%F0%9F%A4%94"><a class="anchor-link" href="#%C2%BFDe-Qu%C3%A9-Se-Trata?-%F0%9F%A4%94">¿De Qué Se Trata? 🤔</a></h2><p>¡Bienvenidos a <em>Predicciones de NFL</em>, una serie donde exploramos lo necesario para hacer predicciones de NFL. En esta primera parte, <em>El Récord</em>, vamos a analizar cómo el récord de temporada de un equipo afecta las probabilidades de ganar.</p>
+<p>A medida que avancemos en la serie, desarrollaremos herramientas y eventualmente construiremos modelos predictivos</p>
+<h3 id="Aclaraci%C3%B3n"><a class="anchor-link" href="#Aclaraci%C3%B3n">Aclaración</a></h3><p>Primero, soy relativamente nuevo en el fútbol americano, con solo tres años de experiencia viendo partidos. Aunque todavía tengo mucho por aprender, esta perspectiva fresca me permite enfocarme únicamente en los números, sin prejuicios.</p>
+<p>Segundo, aunque menciono las apuestas, no apoyo jugar con fines de lucro. Apostar una pequeña cantidad por diversión o para seguir predicciones está bien, pero apostar para ganar dinero puede ser adictivo y dañino.</p>
 <h3 id="Resumen"><a class="anchor-link" href="#Resumen">Resumen</a></h3><p>En este artículo, exploramos si el <strong>récord</strong> de victorias y derrotas de una temporada puede predecir los resultados de los juegos. Al final, construimos un modelo de ML muy simple que predice ganadores con una precisión del <strong>80%</strong>, cubriendo alrededor de 40 casos por año.</p>
 </div>
 </div>
@@ -711,7 +711,7 @@ Loading ITables v2.2.3 from the internet...
 <li><a href="https://www.espn.com/nfl/game/_/gameId/401220350">Jets 23 vs 20 Rams</a> (20 de diciembre de 2020, Semana 16)</li>
 </ul>
 <p>Otro juego que se destaca, y uno que recuerdo demasiado bien, fue la Semana 14 de la temporada 2023: mi equipo local, los Miami Dolphins, enfrentó a los Tennessee Titans. Miami tenía un buen récord de 9-3, mientras que los Titans estaban luchando con 4-8. Las Vegas le dio a Miami un spread de 14 puntos, pero terminamos perdiendo 28-27. Para colmo, tenía a Tyreek Hill en mi equipo de fantasía, y apenas jugó ese día 😩.</p>
-<blockquote class="twitter-tweet" style="text-align: center;"><p dir="ltr" lang="en">The last time the <a href="https://twitter.com/Titans?ref_src=twsrc%5Etfw">@Titans</a> played Miami on MNF, they mounted a 14-point comeback in the last 3 minutes of the game 😳<br/><br/>📺: <a href="https://twitter.com/hashtag/TENvsMIA?src=hash&amp;ref_src=twsrc%5Etfw">#TENvsMIA</a> – Tonight 7:30pm ET on ESPN<br/>📱: Stream on <a href="https://twitter.com/hashtag/NFLPlus?src=hash&amp;ref_src=twsrc%5Etfw">#NFLPlus</a> <a href="https://t.co/rBKrieWrzN">pic.twitter.com/rBKrieWrzN</a></p>— NFL (@NFL) <a href="https://twitter.com/NFL/status/1840777847595549008?ref_src=twsrc%5Etfw">September 30, 2024</a></blockquote> <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+<blockquote class="twitter-tweet" style="text-align: center;"><p dir="ltr" lang="es">La última vez que los <a href="https://twitter.com/Titans?ref_src=twsrc%5Etfw">@Titans</a> jugaron contra Miami en MNF, remontaron un déficit de 14 puntos en los últimos 3 minutos del partido 😳<br/><br/>📺: <a href="https://twitter.com/hashtag/TENvsMIA?src=hash&amp;ref_src=twsrc%5Etfw">#TENvsMIA</a> – Hoy a las 7:30pm ET por ESPN<br/>📱: En vivo en <a href="https://twitter.com/hashtag/NFLPlus?src=hash&amp;ref_src=twsrc%5Etfw">#NFLPlus</a> <a href="https://t.co/rBKrieWrzN">pic.twitter.com/rBKrieWrzN</a></p>— NFL (@NFL) <a href="https://twitter.com/NFL/status/1840777847595549008?ref_src=twsrc%5Etfw">30 de septiembre de 2024</a></blockquote>
 <br/>
 </div>
 </div>

@@ -33,6 +33,11 @@ jobs:
         cd jekyll
         bundle exec jekyll build --destination ../playbydata_site
 
+    # Ensure custom domain is included in the deployment
+    - name: Add Custom Domain
+      run: |
+        echo "playbydata.com" > ./playbydata_site/CNAME
+
     # Deploy to GitHub Pages
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
