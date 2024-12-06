@@ -5,19 +5,19 @@
         <description></description>
         <link>/</link>
         <atom:link href="/es/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 06 Dec 2024 04:45:20 +0000</pubDate>
-        <lastBuildDate>Fri, 06 Dec 2024 04:45:20 +0000</lastBuildDate>
+        <pubDate>Fri, 06 Dec 2024 05:15:57 +0000</pubDate>
+        <lastBuildDate>Fri, 06 Dec 2024 05:15:57 +0000</lastBuildDate>
         <generator>Jekyll v4.3.4</generator>
         
             <item>
-                <title>Finding NFL Winners: &quot;The Record&quot;</title>
+                <title>Predicciones de NFL: &quot;Ganador por Record&quot;</title>
                 <description>
 &lt;div class=&quot;cell border-box-sizing text_cell rendered&quot; id=&quot;cell-id=4447d55cd1ae879d&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
 &lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;%C2%BFDe-Qu%C3%A9-Va-Esto?-%F0%9F%A4%94&quot;&gt;&lt;a class=&quot;anchor-link&quot; href=&quot;#%C2%BFDe-Qu%C3%A9-Va-Esto?-%F0%9F%A4%94&quot;&gt;¿De Qué Va Esto? 🤔&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;¡Bienvenidos a &lt;em&gt;Finding NFL Winners&lt;/em&gt;, una serie donde exploramos lo necesario para predecir &lt;strong&gt;los resultados de los juegos de la NFL&lt;/strong&gt;. En esta primera parte, &lt;em&gt;El Récord&lt;/em&gt;, vamos a analizar cómo el récord de temporada de un equipo afecta las probabilidades de ganar.&lt;/p&gt;
-&lt;p&gt;A medida que avancemos en la serie, desarrollaremos herramientas y eventualmente construiremos un modelo predictivo para responder la gran pregunta: &lt;em&gt;¿Quién va a ganar?&lt;/em&gt; ¡Vamos allá!&lt;/p&gt;
-&lt;h3 id=&quot;Descargos-de-Responsabilidad&quot;&gt;&lt;a class=&quot;anchor-link&quot; href=&quot;#Descargos-de-Responsabilidad&quot;&gt;Descargos de Responsabilidad&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Primero, soy relativamente nuevo en el fútbol americano, con solo tres años de experiencia viendo partidos. Aunque todavía tengo mucho por aprender, esta perspectiva fresca me permite enfocarme únicamente en los números, sin prejuicios.&lt;/p&gt;
-&lt;p&gt;Segundo, aunque haré referencia a las probabilidades de Las Vegas en mi análisis, desaconsejo completamente las apuestas. Son adictivas y dañinas. Esta serie trata sobre entender y predecir el juego, no sobre apostar en él.&lt;/p&gt;
+&lt;h2 id=&quot;%C2%BFDe-Qu%C3%A9-Se-Trata?-%F0%9F%A4%94&quot;&gt;&lt;a class=&quot;anchor-link&quot; href=&quot;#%C2%BFDe-Qu%C3%A9-Se-Trata?-%F0%9F%A4%94&quot;&gt;¿De Qué Se Trata? 🤔&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;¡Bienvenidos a &lt;em&gt;Predicciones de NFL&lt;/em&gt;, una serie donde exploramos lo necesario para hacer predicciones de NFL. En esta primera parte, &lt;em&gt;El Récord&lt;/em&gt;, vamos a analizar cómo el récord de temporada de un equipo afecta las probabilidades de ganar.&lt;/p&gt;
+&lt;p&gt;A medida que avancemos en la serie, desarrollaremos herramientas y eventualmente construiremos modelos predictivos&lt;/p&gt;
+&lt;h3 id=&quot;Aclaraci%C3%B3n&quot;&gt;&lt;a class=&quot;anchor-link&quot; href=&quot;#Aclaraci%C3%B3n&quot;&gt;Aclaración&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Primero, soy relativamente nuevo en el fútbol americano, con solo tres años de experiencia viendo partidos. Aunque todavía tengo mucho por aprender, esta perspectiva fresca me permite enfocarme únicamente en los números, sin prejuicios.&lt;/p&gt;
+&lt;p&gt;Segundo, aunque menciono las apuestas, no apoyo jugar con fines de lucro. Apostar una pequeña cantidad por diversión o para seguir predicciones está bien, pero apostar para ganar dinero puede ser adictivo y dañino.&lt;/p&gt;
 &lt;h3 id=&quot;Resumen&quot;&gt;&lt;a class=&quot;anchor-link&quot; href=&quot;#Resumen&quot;&gt;Resumen&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;En este artículo, exploramos si el &lt;strong&gt;récord&lt;/strong&gt; de victorias y derrotas de una temporada puede predecir los resultados de los juegos. Al final, construimos un modelo de ML muy simple que predice ganadores con una precisión del &lt;strong&gt;80%&lt;/strong&gt;, cubriendo alrededor de 40 casos por año.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -712,7 +712,7 @@ Loading ITables v2.2.3 from the internet...
 &lt;li&gt;&lt;a href=&quot;https://www.espn.com/nfl/game/_/gameId/401220350&quot;&gt;Jets 23 vs 20 Rams&lt;/a&gt; (20 de diciembre de 2020, Semana 16)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Otro juego que se destaca, y uno que recuerdo demasiado bien, fue la Semana 14 de la temporada 2023: mi equipo local, los Miami Dolphins, enfrentó a los Tennessee Titans. Miami tenía un buen récord de 9-3, mientras que los Titans estaban luchando con 4-8. Las Vegas le dio a Miami un spread de 14 puntos, pero terminamos perdiendo 28-27. Para colmo, tenía a Tyreek Hill en mi equipo de fantasía, y apenas jugó ese día 😩.&lt;/p&gt;
-&lt;blockquote class=&quot;twitter-tweet&quot; style=&quot;text-align: center;&quot;&gt;&lt;p dir=&quot;ltr&quot; lang=&quot;en&quot;&gt;The last time the &lt;a href=&quot;https://twitter.com/Titans?ref_src=twsrc%5Etfw&quot;&gt;@Titans&lt;/a&gt; played Miami on MNF, they mounted a 14-point comeback in the last 3 minutes of the game 😳&lt;br/&gt;&lt;br/&gt;📺: &lt;a href=&quot;https://twitter.com/hashtag/TENvsMIA?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#TENvsMIA&lt;/a&gt; – Tonight 7:30pm ET on ESPN&lt;br/&gt;📱: Stream on &lt;a href=&quot;https://twitter.com/hashtag/NFLPlus?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#NFLPlus&lt;/a&gt; &lt;a href=&quot;https://t.co/rBKrieWrzN&quot;&gt;pic.twitter.com/rBKrieWrzN&lt;/a&gt;&lt;/p&gt;— NFL (@NFL) &lt;a href=&quot;https://twitter.com/NFL/status/1840777847595549008?ref_src=twsrc%5Etfw&quot;&gt;September 30, 2024&lt;/a&gt;&lt;/blockquote&gt; &lt;script async=&quot;&quot; charset=&quot;utf-8&quot; src=&quot;https://platform.twitter.com/widgets.js&quot;&gt;&lt;/script&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; style=&quot;text-align: center;&quot;&gt;&lt;p dir=&quot;ltr&quot; lang=&quot;es&quot;&gt;La última vez que los &lt;a href=&quot;https://twitter.com/Titans?ref_src=twsrc%5Etfw&quot;&gt;@Titans&lt;/a&gt; jugaron contra Miami en MNF, remontaron un déficit de 14 puntos en los últimos 3 minutos del partido 😳&lt;br/&gt;&lt;br/&gt;📺: &lt;a href=&quot;https://twitter.com/hashtag/TENvsMIA?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#TENvsMIA&lt;/a&gt; – Hoy a las 7:30pm ET por ESPN&lt;br/&gt;📱: En vivo en &lt;a href=&quot;https://twitter.com/hashtag/NFLPlus?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#NFLPlus&lt;/a&gt; &lt;a href=&quot;https://t.co/rBKrieWrzN&quot;&gt;pic.twitter.com/rBKrieWrzN&lt;/a&gt;&lt;/p&gt;— NFL (@NFL) &lt;a href=&quot;https://twitter.com/NFL/status/1840777847595549008?ref_src=twsrc%5Etfw&quot;&gt;30 de septiembre de 2024&lt;/a&gt;&lt;/blockquote&gt;
 &lt;br/&gt;
 &lt;/div&gt;
 &lt;/div&gt;
