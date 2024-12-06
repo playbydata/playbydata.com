@@ -192,7 +192,7 @@
     "text": [
       "## Conclusiones y Créditos\n",
       "\n",
-      "Hemos concluido la primera parte de *Finding NFL Winners*. Logramos un resultado sólido con un árbol de decisión simple que proporciona una tasa de éxito del 80% en los casos donde se aplicó—alrededor de 35-45 casos por año. En la siguiente parte, profundizaremos en **Puntos**, **Spreads**, y **Totales**.\n",
+      "Hemos concluido la primera parte de *Predicciones de NFL*. Logramos un resultado sólido con un árbol de decisión simple que proporciona una tasa de éxito del 80% en los casos donde se aplicó—alrededor de 35-45 casos por año. En la siguiente parte, profundizaremos en **Puntos**, **Spreads**, y **Totales**.\n",
       "\n",
       "### Agradecimientos:\n",
       "- [OpenAI](https://openai.com/): Sin **ChatGPT**, este artículo no habría sido posible—el idioma nativo del autor es el español (que apenas habla ahora 😂).\n",
