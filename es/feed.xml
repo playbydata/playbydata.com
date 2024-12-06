@@ -5,8 +5,8 @@
         <description></description>
         <link>/</link>
         <atom:link href="/es/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 06 Dec 2024 05:15:57 +0000</pubDate>
-        <lastBuildDate>Fri, 06 Dec 2024 05:15:57 +0000</lastBuildDate>
+        <pubDate>Fri, 06 Dec 2024 05:21:21 +0000</pubDate>
+        <lastBuildDate>Fri, 06 Dec 2024 05:21:21 +0000</lastBuildDate>
         <generator>Jekyll v4.3.4</generator>
         
             <item>
@@ -1288,7 +1288,7 @@ Loading ITables v2.2.3 from the internet...
 &lt;/div&gt;
 &lt;div class=&quot;cell border-box-sizing text_cell rendered&quot; id=&quot;cell-id=52372ededc3d415f&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
 &lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;Conclusiones-y-Cr%C3%A9ditos&quot;&gt;&lt;a class=&quot;anchor-link&quot; href=&quot;#Conclusiones-y-Cr%C3%A9ditos&quot;&gt;Conclusiones y Créditos&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Hemos concluido la primera parte de &lt;em&gt;Finding NFL Winners&lt;/em&gt;. Logramos un resultado sólido con un árbol de decisión simple que proporciona una tasa de éxito del 80% en los casos donde se aplicó—alrededor de 35-45 casos por año. En la siguiente parte, profundizaremos en &lt;strong&gt;Puntos&lt;/strong&gt;, &lt;strong&gt;Spreads&lt;/strong&gt;, y &lt;strong&gt;Totales&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Conclusiones-y-Cr%C3%A9ditos&quot;&gt;&lt;a class=&quot;anchor-link&quot; href=&quot;#Conclusiones-y-Cr%C3%A9ditos&quot;&gt;Conclusiones y Créditos&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Hemos concluido la primera parte de &lt;em&gt;Predicciones de NFL&lt;/em&gt;. Logramos un resultado sólido con un árbol de decisión simple que proporciona una tasa de éxito del 80% en los casos donde se aplicó—alrededor de 35-45 casos por año. En la siguiente parte, profundizaremos en &lt;strong&gt;Puntos&lt;/strong&gt;, &lt;strong&gt;Spreads&lt;/strong&gt;, y &lt;strong&gt;Totales&lt;/strong&gt;.&lt;/p&gt;
 &lt;h3 id=&quot;Agradecimientos:&quot;&gt;&lt;a class=&quot;anchor-link&quot; href=&quot;#Agradecimientos:&quot;&gt;Agradecimientos:&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://openai.com/&quot;&gt;OpenAI&lt;/a&gt;: Sin &lt;strong&gt;ChatGPT&lt;/strong&gt;, este artículo no habría sido posible—el idioma nativo del autor es el español (que apenas habla ahora 😂).&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.nflfastr.com/&quot;&gt;NFLFastR&lt;/a&gt;: Por proporcionar los datos para analizar la NFL.&lt;/li&gt;
