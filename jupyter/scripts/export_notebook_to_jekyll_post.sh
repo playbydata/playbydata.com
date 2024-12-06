@@ -5,14 +5,23 @@ if [ -z "$1" ]; then
     echo "Usage: $0 <notebook_name>"
     exit 1
 fi
-
-# Notebook name passed as the first argument
 NOTEBOOK_NAME=$1
+echo ${NOTEBOOK_NAME}
+
+# Check if a variable is passed
+if [ -z "$2" ]; then
+    LANGUAGE="en"  # No spaces around
+    NOTEBOOK_PATH="articles/$NOTEBOOK_NAME/$NOTEBOOK_NAME.ipynb"
+    GENERATED_HTML="articles/$NOTEBOOK_NAME/${NOTEBOOK_NAME}.html"
+else
+    LANGUAGE="$2"
+    NOTEBOOK_PATH="articles/$NOTEBOOK_NAME/translations/${NOTEBOOK_NAME}_${LANGUAGE}.ipynb"
+    GENERATED_HTML="articles/$NOTEBOOK_NAME/translations/${NOTEBOOK_NAME}_${LANGUAGE}.html"
+fi
 
 # Construct paths
-NOTEBOOK_PATH="articles/$NOTEBOOK_NAME/$NOTEBOOK_NAME.ipynb"
-HTML_OUTPUT_PATH="../jekyll/_posts/en/$NOTEBOOK_NAME.html"
-GENERATED_HTML="articles/$NOTEBOOK_NAME/$NOTEBOOK_NAME.html"
+
+HTML_OUTPUT_PATH="../jekyll/_posts/${LANGUAGE}/$NOTEBOOK_NAME.html"
 NOTEBOOK_ASSET_PATH="articles/$NOTEBOOK_NAME/article_assets/"
 JEKYLL_ASSET_PATH="../jekyll/assets/posts/$NOTEBOOK_NAME/"
 

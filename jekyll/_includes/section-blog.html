@@ -48,15 +48,15 @@
                 •
                 {% endif %}
                 <time class="article__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
-                •
-                <span class="article__minutes">
-                  {% assign words = post.content | number_of_words %}
-                  {% if words < 360 %}
-                    1 min read
-                  {% else %}
-                    {{ words | divided_by:180 }} min read
-                  {% endif %}
-                </span>
+<!--                •-->
+<!--                <span class="article__minutes">-->
+<!--                  {% assign words = post.content | number_of_words %}-->
+<!--                  {% if words < 360 %}-->
+<!--                    1 min read-->
+<!--                  {% else %}-->
+<!--                    {{ words | divided_by:180 }} min read-->
+<!--                  {% endif %}-->
+<!--                </span>-->
               </div>
             </div>
 

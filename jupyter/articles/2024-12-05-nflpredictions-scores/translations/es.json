@@ -1,0 +1,203 @@
+[
+  {
+    "id": "4447d55cd1ae879d",
+    "text": [
+      "## ¿De Qué Se Trata? 🤔\n",
+      "\n",
+      "¡Bienvenidos a *Predicciones de NFL*, una serie donde exploramos lo necesario para hacer predicciones de NFL. En esta primera parte, *El Récord*, vamos a analizar cómo el récord de temporada de un equipo afecta las probabilidades de ganar.\n",
+      "\n",
+      "A medida que avancemos en la serie, desarrollaremos herramientas y eventualmente construiremos modelos predictivos \n",
+      "\n",
+      "### Aclaración\n",
+      "\n",
+      "Primero, soy relativamente nuevo en el fútbol americano, con solo tres años de experiencia viendo partidos. Aunque todavía tengo mucho por aprender, esta perspectiva fresca me permite enfocarme únicamente en los números, sin prejuicios.\n",
+      "\n",
+      "Segundo, aunque menciono las apuestas, no apoyo jugar con fines de lucro. Apostar una pequeña cantidad por diversión o para seguir predicciones está bien, pero apostar para ganar dinero puede ser adictivo y dañino.\n",
+      "\n",
+      "### Resumen\n",
+      "En este artículo, exploramos si el **récord** de victorias y derrotas de una temporada puede predecir los resultados de los juegos. Al final, construimos un modelo de ML muy simple que predice ganadores con una precisión del **80%**, cubriendo alrededor de 40 casos por año."
+    ]
+  },
+  {
+    "id": "b9e403d655355882",
+    "text": [
+      "## Los Datos\n",
+      "\n",
+      "Para esta serie, usaremos los datos jugada por jugada proporcionados por [nflfastR](https://www.nflfastr.com/reference/fast_scraper.html) (Un gran saludo a [nflverse](https://github.com/nflverse)). El conjunto de datos contiene **372 columnas** de datos jugada por jugada, que abarcan desde el **09/12/1999** hasta el **29/11/2024**, con un total de **26 temporadas**, **6,886 juegos** y **1,211,926 jugadas**.\n",
+      "\n",
+      "A continuación, un vistazo rápido a los datos."
+    ]
+  },
+  {
+    "id": "2584ba5e76993142",
+    "text": [
+      "\n",
+      "Como puedes ver, hay mucha información que va desde *yardas por pase por jugada* hasta *tacleadas con asistencia*.\n",
+      "\n",
+      "Para esta primera parte de la serie, nos enfocaremos únicamente en cómo los récords impactan los resultados actuales de los juegos. Para simplificar el conjunto de datos, lo reduciremos a la información de Las Vegas y el récord de la temporada actual.\n",
+      "\n",
+      "A continuación, puedes ver una tabla más reducida que utilizaremos:"
+    ]
+  },
+  {
+    "id": "e25eca987d006415",
+    "text": [
+      "## Probabilidades de Las Vegas\n",
+      "Cuando se trata de predicciones, la mayoría de los modelos de ML se construyen para competir contra las líneas de Las Vegas. ¿Pero por qué luchar contra esto cuando podemos aprovechar la riqueza de información que Las Vegas ofrece? Claro, hay muchas casas de apuestas ofreciendo diferentes probabilidades, y las apuestas públicas probablemente distorsionen las líneas. Pero para este análisis, la línea de spread de [Pro-Football-Reference](https://www.pro-football-reference.com/) debería funcionar perfectamente. Nos proporciona una buena referencia de cuán precisa puede ser Las Vegas y prepara el escenario para algunas comparaciones emocionantes.\n",
+      "\n",
+      "<div style=\"text-align: center;\">\n",
+      "  <figure>\n",
+      "    <img src=\"article_assets/nfl_vegas_odds.jpg\" alt=\"Scores\" style=\"max-height: 600px;\">\n",
+      "    <figcaption>Aaron M. Sprecher (Getty Images)</figcaption>\n",
+      "  </figure>\n",
+      "</div>"
+    ]
+  },
+  {
+    "id": "58957205bc1c8041",
+    "text": "Como se muestra en *Fig. 1*, la precisión de Las Vegas al predecir ganadores utilizando la línea de spread fue un impresionante **66.3%**."
+  },
+  {
+    "id": "78305780291bd703",
+    "text": "Ahora, echemos un vistazo a cuán precisa es Las Vegas al proyectar al ganador según la línea de spread. Es importante notar que en esta parte de la serie, no nos estamos enfocando en el margen de puntos en sí. Esto significa que no estamos evaluando si el spread fue cubierto; solo estamos prediciendo ganadores sin importar la diferencia de puntos."
+  },
+  {
+    "id": "afe4a7793e92b777",
+    "text": [
+      "Como era de esperar en *Fig.2*, podemos ver que cuanto mayor es la diferencia proyectada de spread, más precisa es Las Vegas al predecir al ganador. Sin embargo, más del 50% de los juegos tienen una línea de spread inferior a 4 puntos, y para esos, la precisión está entre 50-60%, lo cual no es muy impresionante.\n",
+      "\n",
+      "Un dato interesante: en 94 ocasiones donde Las Vegas ofreció un spread de 15 o más, solo 3 veces el equipo no favorito realmente ganó. Esos juegos fueron:\n",
+      "\n",
+      "- [Bills 27 vs 6 Vikings](https://www.espn.com/nfl/game/_/gameId/401030784/bills-vikings) (23 de septiembre de 2018, Semana 3)\n",
+      "- [Dolphins 27 vs 24 Patriots](https://www.espn.com/nfl/game/_/gameId/401127909/dolphins-patriots) (29 de diciembre de 2019, Juego de Comodines)\n",
+      "- [Jets 23 vs 20 Rams](https://www.espn.com/nfl/game/_/gameId/401220350) (20 de diciembre de 2020, Semana 16)\n",
+      "\n",
+      "Otro juego que se destaca, y uno que recuerdo demasiado bien, fue la Semana 14 de la temporada 2023: mi equipo local, los Miami Dolphins, enfrentó a los Tennessee Titans. Miami tenía un buen récord de 9-3, mientras que los Titans estaban luchando con 4-8. Las Vegas le dio a Miami un spread de 14 puntos, pero terminamos perdiendo 28-27. Para colmo, tenía a Tyreek Hill en mi equipo de fantasía, y apenas jugó ese día 😩.\n",
+      "\n",
+      "<blockquote class=\"twitter-tweet\" style=\"text-align: center;\"><p lang=\"es\" dir=\"ltr\">La última vez que los <a href=\"https://twitter.com/Titans?ref_src=twsrc%5Etfw\">@Titans</a> jugaron contra Miami en MNF, remontaron un déficit de 14 puntos en los últimos 3 minutos del partido 😳<br><br>📺: <a href=\"https://twitter.com/hashtag/TENvsMIA?src=hash&amp;ref_src=twsrc%5Etfw\">#TENvsMIA</a> – Hoy a las 7:30pm ET por ESPN<br>📱: En vivo en <a href=\"https://twitter.com/hashtag/NFLPlus?src=hash&amp;ref_src=twsrc%5Etfw\">#NFLPlus</a> <a href=\"https://t.co/rBKrieWrzN\">pic.twitter.com/rBKrieWrzN</a></p>&mdash; NFL (@NFL) <a href=\"https://twitter.com/NFL/status/1840777847595549008?ref_src=twsrc%5Etfw\">30 de septiembre de 2024</a></blockquote>\n",
+      "\n",
+      "<br>"
+    ]
+  },
+  {
+    "id": "4a251d7024d4989d",
+    "text": [
+      "## El Récord\n",
+      "\n",
+      "Vamos a sumergirnos en el objetivo de este artículo y descubrir si el récord de un equipo influye en sus posibilidades de ganar.\n",
+      "\n",
+      "<div style=\"text-align: center;\">\n",
+      "  <figure>\n",
+      "    <img src=\"article_assets/nfl_record.webp\" alt=\"Scores\" style=\"max-height: 600px;\">\n",
+      "    <figcaption>Chris Graythen (Getty Images)</figcaption>\n",
+      "  </figure>\n",
+      "</div>"
+    ]
+  },
+  {
+    "id": "ec7cbf4b0f45d9b3",
+    "text": [
+      "Primero, calculemos el **coeficiente de correlación de Pearson** de victorias y margen de victoria contra:\n",
+      "- Total de Juegos (`record_total_games`)\n",
+      "- Juegos Ganados en la Temporada (`season_winning_record`)\n",
+      "- Juegos Perdidos en la Temporada (`season_losing_record`)\n",
+      "- Porcentaje de Victorias en la Temporada (`season_winning_ratio`)\n",
+      "- Juegos Ganados por el Oponente en la Temporada (`opponent_season_winning_record`)\n",
+      "- Juegos Perdidos por el Oponente en la Temporada (`opponent_season_losing_record`)\n",
+      "- Porcentaje de Victorias del Oponente en la Temporada (`opponent_season_winning_ratio`)\n",
+      "- Diferencia en Porcentaje de Victorias (*Porcentaje de Victorias - Porcentaje de Victorias del Oponente*) (`winning_ratio_diff`)\n",
+      "- Si el equipo está jugando en casa o no (`is_home`)\n",
+      "\n",
+      "También incluiremos la *Línea de Spread de Las Vegas* para comparación."
+    ]
+  },
+  {
+    "id": "1b73ffb3082f325b",
+    "text": [
+      "Como era de esperar, Las Vegas sabe lo que hace: la línea de spread de Las Vegas está mucho más correlacionada con ganar y el margen de victoria que el porcentaje de victorias en juegos. Además, los porcentajes de victorias son más significativos que el récord en sí.\n",
+      "\n",
+      "¿Pero qué pasa con las rachas de victorias? ¿Tienen algún impacto en la NFL?"
+    ]
+  },
+  {
+    "id": "c05f4985deb42c46",
+    "text": [
+      "Como se muestra en la tabla anterior, el porcentaje de victorias del oponente tiene una correlación mínima con las probabilidades de ganar. Sin embargo, las rachas largas, como 12, 13 o 14 juegos, parecen tener una influencia más significativa para determinar al ganador.\n",
+      "\n",
+      "En otras palabras, tener un récord ganador o perdedor no afecta directamente el resultado de una manera notoria. Pero vamos a profundizar en los datos para ver si podemos descubrir algún patrón oculto."
+    ]
+  },
+  {
+    "id": "5690eebf7e94395f",
+    "text": [
+      "¡Ahora sí estamos viendo algo interesante! Como podemos observar, cuando la *diferencia de porcentaje de victorias* es pequeña, cualquier cosa puede pasar. Pero a medida que nos movemos hacia los extremos—donde (>0.25) un gran equipo enfrenta a uno que está luchando—comenzamos a ver una tendencia clara.\n",
+      "\n",
+      "Una observación interesante es que cuando la `diff=1`, el patrón cambia. Después de inspeccionar los datos, esto ocurre temprano en la temporada, cuando hay muchos equipos invictos o sin victorias. Entonces, intentemos filtrar los datos para incluir solo juegos después de la Semana 3."
+    ]
+  },
+  {
+    "id": "45953b94ca780db7",
+    "text": "Bueno, esto es algo. Vamos a verificar las correlaciones después de la Semana 3 y cuando la diferencia de porcentaje de victorias sea mayor que 0.25 o menor que -0.25."
+  },
+  {
+    "id": "d383b2ddca01e56f",
+    "text": "Ahora nuestros datos se alinean estrechamente con el spread de Las Vegas, lo cual es motivador para intentar construir un modelo de ML simple. Y sí, hemos reducido significativamente nuestro conjunto de datos—de 6,898 juegos a solo 2,254 juegos—pero bueno, no siempre se puede ganar, ¿verdad? 😅"
+  },
+  {
+    "id": "94ac15017ee21e68",
+    "text": [
+      "## Aprendizaje Automático\n",
+      "Ahora intentemos crear un modelo de ML simple. Usaremos un [Algoritmo de Árbol de Decisión](https://es.wikipedia.org/wiki/Aprendizaje_con_árboles_de_decisión), principalmente porque es sencillo y muy ilustrativo, y también porque tenemos un conjunto de datos muy pequeño, con menos de 10,000 puntos de datos.\n",
+      "\n",
+      "<div style=\"text-align: center;\">\n",
+      "  <figure>\n",
+      "    <img src=\"article_assets/nfl_ml.png\" alt=\"ML\" style=\"max-height: 600px;\">\n",
+      "    <figcaption>Chat GPT</figcaption>\n",
+      "  </figure>\n",
+      "</div>"
+    ]
+  },
+  {
+    "id": "d90dd151d400f61f",
+    "text": [
+      "Los árboles de decisión son un tipo de algoritmo supervisado de aprendizaje automático utilizado tanto para tareas de clasificación como de regresión. Funcionan dividiendo recursivamente los datos en subconjuntos basados en las características que proporcionan la separación más significativa según una métrica elegida. Este método es interpretable, ya que podemos visualizar cómo el árbol divide los datos y el proceso de toma de decisiones que sigue. Sin embargo, los Árboles de Decisión pueden ser propensos a sobreajustarse, especialmente con conjuntos de datos complejos, por lo que utilizaremos técnicas como limitar la profundidad del árbol para garantizar una mejor generalización.\n",
+      "\n",
+      "Primero, dividiremos los datos. Usaremos datos desde 1999 hasta 2022 para entrenar nuestro Árbol de Decisión, y luego probaremos el rendimiento con los datos de 2023 y 2024."
+    ]
+  },
+  {
+    "id": "43556735a01c9924",
+    "text": [
+      "*Fig. 5* muestra el árbol de decisión. Optimizamos los parámetros utilizando *GridSearchCV*, lo que significa que probamos varias configuraciones de árbol para encontrar la que mejor funcionó. Como se muestra, el árbol tiene 3 niveles de profundidad. Primero verifica si `winning_ratio_diff > -0.029`, luego evalúa si `winning_ratio_diff > 0.216`, y finalmente considera si el equipo está jugando en casa.\n",
+      "\n",
+      "Desde 1999 hasta 2022, los equipos locales con un `winning_ratio_diff` de 0.216 jugaron 990 juegos y ganaron 763 de ellos, logrando una impresionante tasa de victorias del 80%.\n",
+      "\n",
+      "Ahora, probemos cómo habría funcionado esta regla simple en 2023 y 2024."
+    ]
+  },
+  {
+    "id": "9c51e8a2be3e28f1",
+    "text": [
+      "Como vemos arriba, de 64 casos donde se cumplió esta condición, se mantuvo la tasa de victorias del 80%. En 51 de esos casos, el equipo ganador celebró en casa 🎉🎉🎉🎉.\n",
+      "\n",
+      "Ahora, pasemos a mostrar la tabla de predicciones."
+    ]
+  },
+  {
+    "id": "3cefbfdca5fbdcf6",
+    "text": "De hecho, en la Semana 13 de 2024, podríamos haber ganado una apuesta combinada de 7 😂."
+  },
+  {
+    "id": "52372ededc3d415f",
+    "text": [
+      "## Conclusiones y Créditos\n",
+      "\n",
+      "Hemos concluido la primera parte de *Finding NFL Winners*. Logramos un resultado sólido con un árbol de decisión simple que proporciona una tasa de éxito del 80% en los casos donde se aplicó—alrededor de 35-45 casos por año. En la siguiente parte, profundizaremos en **Puntos**, **Spreads**, y **Totales**.\n",
+      "\n",
+      "### Agradecimientos:\n",
+      "- [OpenAI](https://openai.com/): Sin **ChatGPT**, este artículo no habría sido posible—el idioma nativo del autor es el español (que apenas habla ahora 😂).\n",
+      "- [NFLFastR](https://www.nflfastr.com/): Por proporcionar los datos para analizar la NFL.\n",
+      "- Mi esposa ❤️."
+    ]
+  }
+]
